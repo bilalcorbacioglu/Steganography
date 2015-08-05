@@ -9,7 +9,7 @@ namespace Steganography
 {
     class Program
     {
-
+	//Resimlerin Path'i derken .txt olacak resimler.Bunun icin Secret Sharing deki bmptotxt.cpp kullanabilirsiniz.
         static int totaline(int next) { 
 			StreamReader TL = new StreamReader("");//Gomulecek resmin yolu.(Sacma resim mesela.)
                 string line = TL.ReadLine();
