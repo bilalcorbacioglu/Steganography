@@ -1,8 +1,8 @@
 # Steganografi
 
-[![Secret-Sharing](https://img.shields.io/badge/consistent-%25100-brightgreen.svg)](https://github.com/bilalcorbacioglu/Secret-Sharing)
-[![Secret-Sharing](https://img.shields.io/badge/codequality-B-blue.svg?style=flat-square)](https://github.com/bilalcorbacioglu/Secret-Sharing)
-[![Secret-Sharing](https://img.shields.io/badge/license-GPL-yellowgreen.svg)](https://github.com/bilalcorbacioglu/Secret-Sharing/blob/master/LICENSE)
+[![Secret-Sharing](https://img.shields.io/badge/consistent-%25100-brightgreen.svg)](https://github.com/bilalcorbacioglu/Steganography)
+[![Secret-Sharing](https://img.shields.io/badge/codequality-B-blue.svg?style=flat-square)](https://github.com/bilalcorbacioglu/Steganography)
+[![Secret-Sharing](https://img.shields.io/badge/license-GPL-yellowgreen.svg)](https://github.com/bilalcorbacioglu/Steganography/blob/master/LICENSE)
 
 
 Steganografi, eski Yunanca'da "gizlenmiş yazı" anlamına gelir ve bilgiyi gizleme (önemli: şifreleme değil) bilimine verilen addır. Steganografi'nin şifrelemeye göre en büyük avantajı bilgiyi gören bir kimsenin gördüğü şeyin içinde önemli bir bilgi olduğunu farkedemiyor olmasıdır, böylece içinde bir bilgi aramaz (oysaki bir şifreli mesaj, çözmesi zor olsa bile, gizemi dolayısıyla ilgi çeker).
