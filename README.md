@@ -64,4 +64,4 @@ Gizli Görüntü 25 X 30 boyutunda olsun. Bu boyuttaki bir görüntüyü tamamen
 
 ### License
 
-The GNU General Public License - see [LICENSE.md](https://github.com/bilalcorbacioglu/Secret-Sharing/blob/master
+The GNU General Public License - see [LICENSE.md](https://github.com/bilalcorbacioglu/Steganography/blob/master/LICENSE)
