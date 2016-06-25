@@ -56,6 +56,16 @@ Gizli Görüntü 25 X 30 boyutunda olsun. Bu boyuttaki bir görüntüyü tamamen
 * M X N Taşıyıcı Resmin Boyutu
 * S son kaç bite gömüleceği
 
+##Run
+
+* Required Package for Linux
+```bash
+$ sudo apt-get install monodevelop
+```
+```bash
+$ msc Program.cs
+$ mono Program.exe
+```
  
 
 ### Credits
