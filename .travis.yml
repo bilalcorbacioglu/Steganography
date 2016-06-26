@@ -1,0 +1,9 @@
+language: csharp
+compiler: mono
+mono:
+  - 4.0.12
+
+script:
+  - cd test
+  - msc Program.cs
+  - mono Program.exe
