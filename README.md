@@ -4,7 +4,7 @@
 [![Secret-Sharing](https://img.shields.io/badge/codequality-B-blue.svg?style=flat-square)](https://github.com/bilalcorbacioglu/Steganography)
 [![Secret-Sharing](https://img.shields.io/badge/license-GPL-yellowgreen.svg)](https://github.com/bilalcorbacioglu/Steganography/blob/master/LICENSE)
 
-[Turkish -> README.md](https://github.com/bilalcorbacioglu/Steganography/READMETR.md)
+[Turkish -> README.md](https://github.com/bilalcorbacioglu/Steganography/blob/master/READMETR.md)
 
 Steganography, in ancient Greek means "hidden post" and information hiding (important: not encryption) is the name given to the science. The biggest advantage of steganography based on cryptography, in anyone who sees the information, is an important information does not notice what you see. Thus, it does not search for inside information. (However, even though it is difficult to decode an encrypted message, the mystery attracts the interest hence)
 
@@ -55,7 +55,7 @@ The hidden image size 25 x 30, To completely cover up the image of this size, ca
 * M X N   The size of the image carrier
 * S       how many bits to embed (Last bits !)
 
-##Run
+### Run
 
 * Required Package for Linux
 ```bash
