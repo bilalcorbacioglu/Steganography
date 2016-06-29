@@ -4,29 +4,28 @@
 [![Secret-Sharing](https://img.shields.io/badge/codequality-B-blue.svg?style=flat-square)](https://github.com/bilalcorbacioglu/Steganography)
 [![Secret-Sharing](https://img.shields.io/badge/license-GPL-yellowgreen.svg)](https://github.com/bilalcorbacioglu/Steganography/blob/master/LICENSE)
 
+[Turkish -> README.md](https://github.com/bilalcorbacioglu/Steganography/READMETR.md)
 
-Steganografi, eski Yunanca'da "gizlenmiş yazı" anlamına gelir ve bilgiyi gizleme (önemli: şifreleme değil) bilimine verilen addır. Steganografi'nin şifrelemeye göre en büyük avantajı bilgiyi gören bir kimsenin gördüğü şeyin içinde önemli bir bilgi olduğunu farkedemiyor olmasıdır, böylece içinde bir bilgi aramaz (oysaki bir şifreli mesaj, çözmesi zor olsa bile, gizemi dolayısıyla ilgi çeker).
+Steganography, in ancient Greek means "hidden post" and information hiding (important: not encryption) is the name given to the science. The biggest advantage of steganography based on cryptography, in anyone who sees the information, is an important information does not notice what you see. Thus, it does not search for inside information. (However, even though it is difficult to decode an encrypted message, the mystery attracts the interest hence)
 
-Bu programda, gizli verinin en anlamsız bitlerinin yer değişimi tekniğini kullanılarak steganografiyi gerçekleştireceğiz. Mantığını aşağıda izah etmeye çalışacağım.
+In this program, we used the technique of the inversion of the most pointless bits of hidden data. I'll try to explain the logic below.
 
-#### Süreç
-Bildiğiniz üzere resimler pixellerden, pixeller RGB değerlerinden oluşur. Steganografide temel mantık R G B değerlerinin saklanmasına dayalı. 
+#### Process
+As you know, the images in pixels, of the pixel consists of RGB values. The basic concept, R G B values are to be stored.
 
-Örneğin;
-
-Elimizdeki taşıyıcı ve gizletilecek olan resimlerimiz olsun. Gizletmek istediğimiz resmi taşıyıcı resmin içine gömmek istiyoruz. Örneğin 1.Piksellerin R değerlerini ele alalım.
+We've got two kind of picture, Hide and carrier image. Hide image, we want to embed into the picture carrier. For example, 1.pixel, let's consider the values of R.
     
-    Gizletilecek Resim      Taşıyıcı resim
+    Hide image              Carrier image
     R = 41                  R = 12
     R = 00101001            R = 00001100
 
-Buradaki temel mantık gizletilecek olan resimin pixel değerlerinin RGB değerlerini binary çevirerek son 2 veya 3 bitini yani LSB bitlerini, taşıyıcı resmin pixel değerine karşılık gelen LSB lerine gömmektir. Geri kalanı sıradaki pixel değerinin LSB sine gömülür.Böylece gizletilecek olan resmin tüm pixel değerleri, taşıyıcı resmin içine gömülene kadar bu süreç kendini tekrar eder. 
+Here is the basic logic, the image to hide the RGB values of binary value. Last 2-3 bits (LSB bits), carrier image pixel corresponding to the value of bit (LSB bits) is to bury. The rest of the next pixel value (LSB). Thus, all pixel values of the image that will be hidden when the carrier is embedded into the image, and the process repeats itself. 
 
-    Peki neden son 2 veya 3 bitine gömüyoruz ?
+    So why are we in the last 2 or 3 bits of the holes?
 
-Çünkü son 4 bitine gömersek insan gözü bu değişimin farkına varır. Hatta son 3 bit bile risklidir. 2 bit kesin sonucu verecektir. Bende bu programda son 2 bite gömdüm. Yukarıdaki örneği daha iyi anlamanız için onu biraz aşağı doğru devam ettireceğim
+Because the last 4 bits into bury, become aware of the change to the human eye. In fact, the last 3 bits could even be risky. 2-bit exact result. I buried the last 2 bits in this program. Let's continue from the example above.
     
-    Gizletilecek resim          Taşıyıcı Resim
+    Hide image              Carrier image
     R = 00101001            R = 00001100 (1.Pixel)
                             G = 00010111
                             B = 01001001
@@ -34,10 +33,10 @@ Buradaki temel mantık gizletilecek olan resimin pixel değerlerinin RGB değerl
                             G = 10100111
                             B = 11100101
 
-Programı Çalıştırdıktan Sonra Taşıyıcı Resmin içine gizletilecek olan resmin 1.Pixelinin R değerinin gömüldüğüne dikkat edin.
+After running the program, into the carrier image, the picture to hide 1. Pixel (R value) notice was buried..
 
-    Gizletilecek resim          Taşıyıcı Resim
-                                Eski        Yeni
+    Hide image              Carrier image
+                                old         new
     R = 00101001            R = 00001100 -> 00001100 (1.Pixel)
                             G = 00010111 -> 00010110
                             B = 01001001 -> 01001010
@@ -45,16 +44,16 @@ Programı Çalıştırdıktan Sonra Taşıyıcı Resmin içine gizletilecek olan
                             G = 10100111 -> 10100111
                             B = 11100101 -> 11100101
 
-* Steganografi ile Secret Sharing birlikte kullanılırsa, tesine mühendislik oldukça zor olacaktır.
+* Steganography and Secret Sharing is used with the, reverse engineering will be quite difficult.
 
-#### Boyutlar
+#### Dimension
 
-Gizli Görüntü 25 X 30 boyutunda olsun. Bu boyuttaki bir görüntüyü tamamen örten bir taşıyıcı resimin boyutu şu şekilde hesaplanır.
+The hidden image size 25 x 30, To completely cover up the image of this size, carrier size is calculated as follows.
 
     0 <= 25 x 30 <= (M X N X S)/8   
 
-* M X N Taşıyıcı Resmin Boyutu
-* S son kaç bite gömüleceği
+* M X N   The size of the image carrier
+* S       how many bits to embed (Last bits !)
 
 ##Run
 
